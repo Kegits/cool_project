@@ -8,10 +8,11 @@ django = "*"
 django-crispy-forms = "*"
 crispy-bootstrap4 = "*"
 pillow = "*"
-python-decouple = "*"
 boto3 = "*"
 django-storages = "*"
 gunicorn = "*"
+python-decouple = "*"
+django-environ = "*"
 
 [dev-packages]
 
