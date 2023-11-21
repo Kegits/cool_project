@@ -29,7 +29,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['kedgitapp-8bffe7a78a2c.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh']
 
 
 # Application definition
@@ -84,8 +84,14 @@ WSGI_APPLICATION = 'coolweb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #'POSTGRES_URL': os.environ.get("POSTGRES_URL"),
+        #'POSTGRES_PRISMA_URL': os.environ.get("POSTGRES_PRISMA_URL"),
+        #'POSTGRES_URL_NON_POOLING': os.environ.get("POSTGRES_URL_NON_POOLING"),
+        'NAME': config("POSTGRES_DATABASE"),
+        'USER': config("POSTGRES_USER"),
+        'HOST': config("POSTGRES_HOST"),
+        'PASSWORD': config("POSTGRES_PASSWORD"),
     }
 }
 
