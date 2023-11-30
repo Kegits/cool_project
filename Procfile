@@ -1,1 +1,0 @@
-web: gunicorn coolweb.wsgi
